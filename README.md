@@ -15,7 +15,7 @@ A personal analytics project that transforms chess tournament PGN files into str
 
 ## Architecture
 
-![Chess analytics architecture](C:\projects\chess-dashboard\png)
+![Chess analytics architecture](arhitecture.png)
 
 The workflow has two related outputs from the transformed game data:
 
@@ -170,9 +170,10 @@ python src/load_to_mysql.py
 **Current implementation limitation:** `load_to_mysql.py` validates that the CSV contains exactly 57 rows. If you use a dataset of a different size, update that validation to match your intended workflow before importing it.
 
 ### 7. Call the API
-![Overview statistics API response](C:\projects\chess-dashboard\api-overview.png)
+![Overview statistics API response](api-overview.png)
 
-![Paginated games API response](C:\projects\chess-dashboard\api-games-pagination.png)
+![Paginated games API response](api-games-pagination.png)
+
 With the API running, these endpoints are available at `http://localhost:8080`:
 
 | Method | Endpoint | Description |
@@ -210,7 +211,7 @@ The overview response for the current local dataset is expected to have this sha
 The games endpoint validates pagination (`page >= 0`, `1 <= size <= 100`) and accepts only `White` or `Black` for `color`. Invalid inputs return HTTP 400; requesting a game ID that does not exist returns HTTP 404.
 
 ### 8. Power BI dashboard
-![Power BI dashboard overview](C:\projects\chess-dashboard\dashboard-overview.png)
+![Power BI dashboard overview](dashboard-overview.png)
 
 The dashboard was built in Power BI Desktop using `data/games.csv`, with measures for game count, wins, draws, losses, win rate, score percentage, and average opponent rating. It includes analysis by date, color, opponent rating band, result, and opening label, plus slicers for tournament, color, and date.
 
@@ -218,6 +219,7 @@ The `.pbix` and source dataset are not committed because the report can embed us
 
 ## Tests and Continuous Integration
 ![Successful GitHub Actions CI run](C:\projects\chess-dashboard\ci-success.png)
+
 Run the Python tests from the repository root:
 
 ```powershell
