@@ -58,6 +58,6 @@ jobs:
           cache: maven
           cache-dependency-path: backend/chess-analytics-api/pom.xml
 
-      - name: Run Java tests
+      -       - name: Run Java tests
         working-directory: backend/chess-analytics-api
-        run: ./mvnw -B clean test
+        run: chmod +x mvnw && ./mvnw -B clean test
