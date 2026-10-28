@@ -15,7 +15,7 @@ A personal analytics project that transforms chess tournament PGN files into str
 
 ## Architecture
 
-![Chess analytics architecture](arhitecture.png)
+![Chess analytics architecture](architecture.png)
 
 The workflow has two related outputs from the transformed game data:
 
@@ -218,7 +218,7 @@ The dashboard was built in Power BI Desktop using `data/games.csv`, with measure
 The `.pbix` and source dataset are not committed because the report can embed user-specific data. To inspect or rebuild the dashboard, open Power BI Desktop and load the generated `data/games.csv`; recreate the measures and visuals in the local report, or use the original report file if you have it locally.
 
 ## Tests and Continuous Integration
-![Successful GitHub Actions CI run](C:\projects\chess-dashboard\ci-success.png)
+![Successful GitHub Actions CI run](ci-success.png)
 
 Run the Python tests from the repository root:
 
