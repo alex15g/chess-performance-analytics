@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="570" viewBox="0 0 1120 570" role="img" aria-labelledby="title desc">
+  <title id="title">Chess Performance Analytics architecture</title>
+  <desc id="desc">PGN input is anonymized and transformed by Python ETL into CSV. The CSV feeds Power BI and is also imported into MySQL, which is queried by a Spring Boot REST API. GitHub Actions runs automated tests.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:1.6;rx:14}.head{font:600 17px Arial,sans-serif;fill:#0f172a}.sub{font:14px Arial,sans-serif;fill:#475569}.edge{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}.label{font:12px Arial,sans-serif;fill:#475569}.title{font:700 25px Arial,sans-serif;fill:#0f172a}
+    </style>
+  </defs>
+  <rect class="bg" width="1120" height="570" rx="18"/>
+  <text class="title" x="560" y="42" text-anchor="middle">Chess Performance Analytics — System Overview</text>
+
+  <rect class="box" x="40" y="115" width="210" height="100"/>
+  <text class="head" x="145" y="148" text-anchor="middle">PGN input</text>
+  <text class="sub" x="145" y="174" text-anchor="middle">games.pgn</text>
+  <text class="sub" x="145" y="195" text-anchor="middle">Local source file</text>
+
+  <rect class="box" x="320" y="115" width="220" height="100"/>
+  <text class="head" x="430" y="147" text-anchor="middle">Python processing</text>
+  <text class="sub" x="430" y="173" text-anchor="middle">Anonymize + ETL</text>
+  <text class="sub" x="430" y="194" text-anchor="middle">python-chess, pandas</text>
+
+  <rect class="box" x="610" y="115" width="190" height="100"/>
+  <text class="head" x="705" y="148" text-anchor="middle">Structured data</text>
+  <text class="sub" x="705" y="174" text-anchor="middle">games.csv</text>
+  <text class="sub" x="705" y="195" text-anchor="middle">Validated records</text>
+
+  <rect class="box" x="875" y="75" width="200" height="100"/>
+  <text class="head" x="975" y="108" text-anchor="middle">Power BI</text>
+  <text class="sub" x="975" y="134" text-anchor="middle">Dashboard</text>
+  <text class="sub" x="975" y="154" text-anchor="middle">Power Query / DAX</text>
+
+  <rect class="box" x="610" y="305" width="190" height="100"/>
+  <text class="head" x="705" y="338" text-anchor="middle">MySQL 8</text>
+  <text class="sub" x="705" y="364" text-anchor="middle">games table</text>
+  <text class="sub" x="705" y="385" text-anchor="middle">Docker Compose</text>
+
+  <rect class="box" x="320" y="305" width="220" height="100"/>
+  <text class="head" x="430" y="338" text-anchor="middle">Spring Boot API</text>
+  <text class="sub" x="430" y="364" text-anchor="middle">Java 17 / JPA</text>
+  <text class="sub" x="430" y="385" text-anchor="middle">Games + statistics</text>
+
+  <rect class="box" x="40" y="305" width="210" height="100"/>
+  <text class="head" x="145" y="338" text-anchor="middle">REST clients</text>
+  <text class="sub" x="145" y="364" text-anchor="middle">Browser / curl</text>
+  <text class="sub" x="145" y="385" text-anchor="middle">JSON responses</text>
+
+  <rect class="box" x="875" y="305" width="200" height="100"/>
+  <text class="head" x="975" y="338" text-anchor="middle">GitHub Actions</text>
+  <text class="sub" x="975" y="364" text-anchor="middle">Python + Java tests</text>
+  <text class="sub" x="975" y="385" text-anchor="middle">Push / pull request</text>
+
+  <path class="edge" d="M250 165 H320"/><text class="label" x="285" y="153" text-anchor="middle">PGN</text>
+  <path class="edge" d="M540 165 H610"/><text class="label" x="575" y="153" text-anchor="middle">CSV</text>
+  <path class="edge" d="M800 145 H875"/><text class="label" x="838" y="133" text-anchor="middle">Import</text>
+  <path class="edge" d="M705 215 V305"/><text class="label" x="716" y="264">CSV import</text>
+  <path class="edge" d="M610 355 H540"/><text class="label" x="575" y="343" text-anchor="middle">SQL/JPA</text>
+  <path class="edge" d="M320 355 H250"/><text class="label" x="285" y="343" text-anchor="middle">HTTP/JSON</text>
+  <path class="edge" d="M875 355 H830" stroke-dasharray="5 5"/>
+  <text class="label" x="850" y="340" text-anchor="middle">CI</text>
+  <text x="560" y="500" text-anchor="middle" style="font:13px Arial,sans-serif;fill:#64748b">Private/source data stays local; CI uses a temporary test database.</text>
+</svg>
