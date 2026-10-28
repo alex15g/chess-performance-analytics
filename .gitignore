@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Java / Maven
+**/target/
+
+# IDE
+.vscode/
+.idea/
+
+# Original and intermediate chess data
+data/games.pgn
+data/games_anonymized.pgn
+data/games.csv
+
+# Power BI: review before publishing
+dashboard/*.pbix
+
+# Operating system
+.DS_Store
+Thumbs.db
